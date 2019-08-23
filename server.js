@@ -16,7 +16,8 @@ app.post('/location', (req, res) => {
 });
 
 app.get('/location', (req, res) => {
-  fs.appendFile('./location.txt', req.url);
+  fs.appendFile('./location.txt', JSON.stringify(req.query) + '\n', err => {});
+  res.end('OK');
 });
 
 app.listen(process.env.PORT || 3000);
