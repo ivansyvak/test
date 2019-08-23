@@ -8,7 +8,7 @@ function getLocation() {
 
 function showPosition(position) {
   let data = [];
-  let params = ['latitude', 'longtitude'];
+  let params = ['latitude', 'longitude'];
 
   for (let param of params) {
     let encodedKey = encodeURIComponent(param);
