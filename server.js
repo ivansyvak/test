@@ -19,12 +19,12 @@ app.get('/', function (req, res) {
 
 app.post('/location', (req, res) => {
   http.get('http://93.79.103.147:3000/location?data='+JSON.stringify(req.body));
-  res.end();
+  res.end(JSON.stringify({}));
 });
 
 app.get('/location', (req, res) => {
   fs.appendFile('./location.txt', JSON.stringify(req.query) + '\n', err => {});
-  res.end('OK');
+  res.end(JSON.stringify({}));
 });
 
 app.listen(process.env.PORT || 3000);
