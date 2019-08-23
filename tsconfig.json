@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "target": "es6",
+        "lib": ["es6", "es7", "dom"],
+        "outDir": "./static/js",
+        "sourceMap": true
+    },
+    "include": ["./src/**/*.ts"]
+}
