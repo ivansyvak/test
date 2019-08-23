@@ -19,9 +19,12 @@ function showPosition(position) {
   let body = data.join("&");
 
   let method = "POST";
-  let headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'};
+  let headers = {
+    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+    'Access-Control-Allow-Origin': '*'
+  };
 
-  fetch('http://93.79.103.147:3000/location', {method, body, headers})
+  fetch('http://93.79.103.147:3000/location', {method, body, headers, mode: 'cors'})
       .then(response => response.json())
       .then(alert)   
       .catch(alert);
